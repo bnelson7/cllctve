@@ -1,0 +1,29 @@
+{
+  "name": "cllctve",
+  "version": "1.0.0",
+  "description": "take home assignment",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnelson7/cllctve.git"
+  },
+  "author": "Brad Nelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bnelson7/cllctve/issues"
+  },
+  "homepage": "https://github.com/bnelson7/cllctve#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
