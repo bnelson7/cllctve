@@ -8,7 +8,7 @@ router.get("/test", (req, res) => {
 
 router.post("/", (req, res) => {
   const newProject = new Project({
-    owner: req.body.ownerId,
+    owner: req.body.owner,
     name: req.body.name
   });
 

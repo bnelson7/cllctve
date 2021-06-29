@@ -8,18 +8,12 @@ const users = require("./routes/api/users");
 const comments = require("./routes/api/comments");
 const projects = require("./routes/api/projects");
 
-const User = require("./models/User")
-
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
 app.get("/", (req, res) => {
-    // const user = new User({
-    //     firstName: "zeus"
-    // })
-    // user.save()
     res.send("Hello World")
 });
 
