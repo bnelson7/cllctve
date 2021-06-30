@@ -8,7 +8,10 @@ router.post("/", (req, res) => {
   const newUser = new User({
     firstName: req.body.name
   });
-  newUser.save().then(user => res.json(user));
+  newUser
+    .save()
+    .then(user => res.json(user))
+    .catch(err => res.status(500).json(err.message));
 });
 
 module.exports = router;

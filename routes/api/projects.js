@@ -13,7 +13,10 @@ router.post("/", (req, res) => {
     name: req.body.name
   });
 
-  newProject.save().then(project => res.json(project));
+  newProject
+    .save()
+    .then(project => res.json(project))
+    .catch(err => res.status(500).json(err.message));
 });
 
 // get all projects
