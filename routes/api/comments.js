@@ -7,6 +7,7 @@ router.get("/test", (req, res) => {
   res.json({ msg: "This is the comments route" });
 });
 
+// create new comment checking if it passes validations
 router.post("/", (req, res) => {
   const { errors, isValid } = validateCommentContent(req.body);
 
@@ -21,6 +22,7 @@ router.post("/", (req, res) => {
   newComment.save().then(comment => res.json(comment));
 });
 
+// get all comments for a particular project
 router.get("/project/:projectId", (req, res) => {
   Comment.find({ project: req.params.projectId })
     .sort({ date: -1 })

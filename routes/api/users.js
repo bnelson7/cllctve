@@ -3,6 +3,7 @@ const router = express.Router();
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
+// create new user
 router.post("/", (req, res) => {
   const newUser = new User({
     firstName: req.body.name
