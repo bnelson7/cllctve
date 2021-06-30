@@ -19,7 +19,10 @@ router.post("/", (req, res) => {
     commentContent: req.body.content
   });
 
-  newComment.save().then(comment => res.json(comment));
+  newComment
+    .save()
+    .then(comment => res.json(comment))
+    .catch(err => res.status(500).json(err.message));
 });
 
 // get all comments for a particular project

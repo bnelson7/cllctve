@@ -1,12 +1,12 @@
 const Validator = require("validator");
 const validText = require("./valid-text");
 
-module.exports = function validateCommentContent(data) {
+module.exports = function validateCommentContent(comment) {
   let errors = {};
 
-  data.text = validText(data.text) ? data.text : "";
+  comment.content = validText(comment.content) ? comment.content : "";
 
-  if (Validator.isEmpty(data.text)) errors.text = "Text field is required";
+  if (Validator.isEmpty(comment.content)) errors.message = "Content field is required";
 
   return {
     errors,
