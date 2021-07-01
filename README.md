@@ -34,5 +34,8 @@ to know which project is associated with the comment. As well as some user ids:
 60db65b15b0509521d85b03c
 60db65e75b0509521d85b03e 
 ```
+- For testing in Postman send the id's under the keys project and author for projects 
+and users respectively in the request body, along with the comment content under
+the key of content
 - All of the routes are in the folder routes/api, and all of the models are in
 the model folder
