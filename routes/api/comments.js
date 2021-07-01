@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Comment = require("../../models/Comment");
+const User = require("../../models/User");
 const validateCommentContent = require("../../validation/comments");
 
 router.get("/test", (req, res) => {
@@ -21,7 +22,11 @@ router.post("/", (req, res) => {
 
   newComment
     .save()
-    .then(comment => res.json(comment))
+    .then(comment => {
+      Comment.populate(newComment, { path: "author", model: User })
+        .then(commentWithAuthor => res.json(commentWithAuthor))
+        .catch(err => res.json(err.message));
+    })
     .catch(err => res.status(500).json(err.message));
 });
 
