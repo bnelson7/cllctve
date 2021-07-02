@@ -10,7 +10,13 @@ const ProjectSchema = new Schema({
   name: {
     type: String,
     required: true
-  }
+  },
+  comments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Comment"
+    }
+  ]
 });
 
 module.exports = Project = mongoose.model("Project", ProjectSchema);
